@@ -47,3 +47,31 @@ section {
     box-shadow: 2px 2px 2px 2px #d86c23;
     border: 2px solid #d86c23;
 }
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.win-count {
+    display: flex;
+    justify-content: center;
+}
+
+.win-count-x,.win-count-o {
+    margin: 0 20px;
+}
+
+.win-count-x span,
+.win-count-o span {
+    font-weight: bold;
+}
+
+.win-count-x {
+    color: #ff6347; /* Red color for X */
+}
+
+.win-count-o {
+    color: #4169e1; /* Blue color for O */
+}

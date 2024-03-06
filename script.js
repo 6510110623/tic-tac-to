@@ -1,14 +1,23 @@
 const statusDisplay = document.querySelector('.game--status');
+const countWinXDisplay = document.querySelector('.win-count-x');
+const countWinODisplay = document.querySelector('.win-count-o');
+
 
 let gameActive = true;
 let currentPlayer = "X";
 let gameState = ["", "", "", "", "", "", "", "", ""];
+let countWinX = 0;
+let countWinO = 0;
 
 const winningMessage = () => `Player ${currentPlayer} has won!`;
 const drawMessage = () => `Game ended in a draw!`;
 const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+const winScoreX = () => `X : ${countWinX}`
+const winScoreO = () => `O : ${countWinO}`
+
 
 statusDisplay.innerHTML = currentPlayerTurn();
+countWinXDisplay.innerHTML = currentPlayerTurn();
 
 const winningConditions = [
     [0, 1, 2],
@@ -48,6 +57,13 @@ function handleResultValidation() {
 
     if(roundWon) {
         statusDisplay.innerHTML = winningMessage();
+        if(currentPlayer == "X"){
+            countWinX++
+            countWinXDisplay.innerHTML = winScoreX();
+        } else {
+            countWinO++
+            countWinODisplay.innerHTML = winScoreO();
+        }
         gameActive = false;
         return;
     }
