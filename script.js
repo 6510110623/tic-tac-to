@@ -17,7 +17,8 @@ const winScoreO = () => `O : ${countWinO}`
 
 
 statusDisplay.innerHTML = currentPlayerTurn();
-countWinXDisplay.innerHTML = currentPlayerTurn();
+countWinXDisplay.innerHTML = winScoreX();
+countWinODisplay.innerHTML = winScoreO();
 
 const winningConditions = [
     [0, 1, 2],
